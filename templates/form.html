@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flower Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        h3 {
+            margin-top: 20px;
+            color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Flower Predictor</h2>
+        <form action="/predict_form" method="post">
+            <input type="text" name="sepal_length" placeholder="Sepal Length"><br>
+            <input type="text" name="sepal_width" placeholder="Sepal Width"><br>
+            <input type="text" name="petal_length" placeholder="Petal Length"><br>
+            <input type="text" name="petal_width" placeholder="Petal Width"><br>
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if result %}
+        <h3>{{ result }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
